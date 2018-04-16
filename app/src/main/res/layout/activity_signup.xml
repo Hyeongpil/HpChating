@@ -3,6 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/iv_signup_profile"
+        android:src="@drawable/ic_add_to_photos_black_24dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:layout_gravity="center"/>
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
