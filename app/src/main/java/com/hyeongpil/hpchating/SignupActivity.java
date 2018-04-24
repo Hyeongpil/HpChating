@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -80,8 +81,13 @@ public class SignupActivity extends AppCompatActivity {
                                         UserModel userModel = new UserModel();
                                         userModel.userName = et_name.getText().toString();
                                         userModel.profileImageUrl = imageUrl;
-                                        FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel);
-                                        mActivity.finish();
+                                        userModel.userName = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                        FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                mActivity.finish();
+                                            }
+                                        });
                                     }
                                 });
                             }

@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.hyeongpil.hpchating.MainActivity">
 
-
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,4 +18,14 @@
         app:menu="@menu/bottom_navigation_main">
 
     </android.support.design.widget.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/fl_main_frame"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/main_navigationview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </FrameLayout>
 </RelativeLayout>
